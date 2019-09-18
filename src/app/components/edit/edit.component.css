@@ -6,3 +6,11 @@
 .field-full-width {
   width: 100%;
 }
+
+.spinner {
+  margin: auto;
+}
+
+button {
+  margin-right: 1rem;
+}

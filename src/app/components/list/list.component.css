@@ -9,3 +9,7 @@ table {
 .spinner {
   margin:auto;
 }
+
+button {
+  margin-right: 1rem;
+}
