@@ -14,6 +14,7 @@ export class EditComponent implements OnInit {
   id: string;
   issue: any = {};
   updateForm: FormGroup;
+  fetching: boolean;
 
   // tslint:disable-next-line: max-line-length
   constructor(private issueService: IssueService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {
@@ -31,6 +32,7 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.fetching = true;
     this.route.params.subscribe((params) => {
       this.id = params.id;
       this.issueService.getIssueById(this.id).subscribe(res => {
@@ -40,6 +42,7 @@ export class EditComponent implements OnInit {
         this.updateForm.get('description').setValue(this.issue.description);
         this.updateForm.get('severity').setValue(this.issue.severity);
         this.updateForm.get('status').setValue(this.issue.status);
+        this.fetching = false;
       });
     });
   }

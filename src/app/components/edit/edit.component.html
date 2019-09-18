@@ -6,7 +6,8 @@
       </section>
       <mat-divider></mat-divider>
       <br>
-      <form [formGroup]="updateForm" class="edit-form">
+      <mat-spinner *ngIf="fetching" class="spinner"></mat-spinner>
+      <form [formGroup]="updateForm" class="edit-form" *ngIf="!fetching">
         <mat-form-field class="field-full-width">
           <input matInput placeholder="Issue Title" formControlName="title" #title>
         </mat-form-field>

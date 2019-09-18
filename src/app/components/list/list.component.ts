@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
 
 import { IssueService } from '../../issue.service';
 import { Issue } from 'src/app/issue.model';
@@ -35,8 +34,17 @@ export class ListComponent implements OnInit {
   }
 
   deleteIssue(id: string) {
+    this.showSpinner = true;
     this.issueService.deleteIssue(id).subscribe(() => {
       this.fetchIssues();
+    });
+  }
+
+  refresh() {
+    this.showSpinner = true;
+    this.issueService.getIssues().subscribe((data: Issue[]) => {
+      this.issues = data;
+      this.showSpinner = false;
     });
   }
 

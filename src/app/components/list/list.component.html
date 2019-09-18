@@ -1,14 +1,13 @@
 <div>
   <br>
-  <mat-card *ngIf="showSpinner">
-    <mat-spinner class="spinner"></mat-spinner>
-  </mat-card>
-  <mat-card *ngIf="!showSpinner">
+  <mat-card>
     <button mat-raised-button color="primary" [routerLink]="['/create']" routerLinkActive="router-link-active" >Create New Issue</button>
+    <button mat-raised-button color="primary" (click)="refresh()">Refresh Issues</button>
     <br><br>
     <mat-divider></mat-divider>
     <br>
-    <table mat-table [dataSource]="issues">
+    <mat-spinner class="spinner" *ngIf="showSpinner"></mat-spinner>
+    <table mat-table [dataSource]="issues" *ngIf="!showSpinner">
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef>Title</th>
         <td mat-cell *matCellDef="let element">{{element.title}}</td>
