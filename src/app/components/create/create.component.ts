@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
 
   addIssue(title: string, responsible: string, description: string, severity: string) {
     this.issueService.addIssue(title, responsible, description, severity).subscribe(() => {
-      this.router.navigate(['/list']);
+      this.router.navigate(['/']);
     });
   }
 
