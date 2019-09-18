@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
-
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'edit/:id', component: EditComponent },
-  { path: 'list', component: ListComponent },
-  { path: '', redirectTo: 'list', pathMatch: 'full' },
-  { path: '**', redirectTo: 'list', pathMatch: 'full' }
+  { path: '', component: ListComponent },
+  { path: 'about', component: AboutComponent },
+
 ];
 
 @NgModule({

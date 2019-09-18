@@ -1,5 +1,6 @@
 <mat-toolbar>
-  <span>Mean Stack Tutorial</span>
+  <h1 [routerLink]="['/']" >Mean Stack Tutorial</h1>
+  <button mat-button [routerLink]="['/about']" class="about-button">About</button>
 </mat-toolbar>
 <div>
   <router-outlet></router-outlet>
