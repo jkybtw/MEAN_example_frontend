@@ -13,6 +13,7 @@ import { MatToolbarModule,
     MatCardModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
     MatTableModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,6 +45,7 @@ import { EditComponent } from './components/edit/edit.component';
     MatDividerModule,
     MatSnackBarModule,
     MatTableModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     ReactiveFormsModule
   ],

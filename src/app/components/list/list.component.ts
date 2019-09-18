@@ -14,18 +14,19 @@ export class ListComponent implements OnInit {
 
   issues: Issue[] = [];
   displayedColumns = ['title', 'responsible', 'description', 'severity', 'status', 'actions'];
+  showSpinner: boolean;
 
   constructor(private issueService: IssueService, private router: Router) { }
 
   ngOnInit() {
     this.fetchIssues();
+    this.showSpinner = true;
   }
 
   fetchIssues() {
     this.issueService.getIssues().subscribe((data: Issue[]) => {
       this.issues = data;
-      console.log('Data requested ...');
-      console.log(this.issues);
+      this.showSpinner = false;
     });
   }
 

@@ -1,6 +1,9 @@
 <div>
   <br>
-  <mat-card>
+  <mat-card *ngIf="showSpinner">
+    <mat-spinner class="spinner"></mat-spinner>
+  </mat-card>
+  <mat-card *ngIf="!showSpinner">
     <button mat-raised-button color="primary" [routerLink]="['/create']" routerLinkActive="router-link-active" >Create New Issue</button>
     <br><br>
     <mat-divider></mat-divider>
