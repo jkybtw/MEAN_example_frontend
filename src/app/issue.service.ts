@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IssueService {
 
-  uri = 'http://localhost:4000';
+  uri = 'https://stormy-ridge-10701.herokuapp.com';
   // creates instance of http in class to use
   constructor(private http: HttpClient) { }
 
